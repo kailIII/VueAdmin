@@ -1,7 +1,7 @@
 {
-  "name": "vuejs",
+  "name": "Admin Panel VueJS",
   "version": "1.0.0",
-  "description": "Tutorial VueJS",
+  "description": "Admin Panel VueJS para diferentes sistemas empresariales",
   "author": "Saul Espinoza ",
   "private": true,
   "scripts": {
