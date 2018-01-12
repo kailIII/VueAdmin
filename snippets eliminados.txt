@@ -1,0 +1,31 @@
+@media screen and (max-width:800px){
+  .header nav {
+    width: 60%;
+    height: 100%;
+    margin:0;
+    position: fixed;
+  }
+  .header nav ul li {
+    display: block;;
+    float: none;
+    border-bottom: 1px solid rgb(150, 166, 168);
+  }
+}
+
+//Botones de barra de navegacion bottom
+
+<a class="iconoBottomNavbar mx-auto" href="#"><span><icon name="cogs" flip="horizontal"></icon></span>Configuracion</a>
+
+<b-navbar-toggle target="nav_collapse"></b-navbar-toggle> este es el icono del menu hamburguesa
+<b-collapse is-nav id="nav_collapse">
+aqui va el menu ul para que sea responsivo con menu hamburguesa
+</b-collapse>
+
+
+boton de menu de barra top me puede servir
+<b-button size="sm" right class="m-1"  variant="warning">
+  <icon name="envelope" scale="1" flip="horizontal"></icon>
+  <!--<b-badge variant="light">
+    {{notificaciones}}
+  </b-badge>-->
+</b-button>
