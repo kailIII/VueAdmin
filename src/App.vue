@@ -8,6 +8,7 @@
     <router-view>
       <Content/>
       <Content2/>
+      <Mensajes/>
     </router-view>
     <Menu2/>
   </div>
@@ -18,13 +19,15 @@ import Navbar from './components/Navbar'
 import Menu2 from './components/Menu2'
 import Content from './components/Content'
 import Content2 from './components/Content2'
+import Mensajes from './components/Mensajes'
 export default {
   name: 'app',
   components: {
     Navbar,
     Menu2,
     Content,
-    Content2
+    Content2,
+    Mensajes
 
   },
   methods: {

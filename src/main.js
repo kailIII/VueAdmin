@@ -11,7 +11,10 @@ import 'hover.css/css/hover.css'
 import 'vue-awesome/icons'
 import Content from './components/Content'
 import Content2 from './components/Content2'
+import Mensajes from './components/Mensajes'
 import Icon from 'vue-awesome/components/Icon'
+import VueContentPlaceholders from 'vue-content-placeholders'
+Vue.use(VueContentPlaceholders)
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.use(VueProgressBar, {
@@ -23,7 +26,8 @@ Vue.config.productionTip = false
 Vue.component('icon', Icon)
 const routes = [
   { path: '/', component: Content },
-  { path: '/content2', component: Content2 }
+  { path: '/content2', component: Content2 },
+  { path: '/mensajes', component: Mensajes }
 ]
 const router = new VueRouter({
   routes

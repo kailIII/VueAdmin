@@ -25,11 +25,19 @@
             </b-list-group-item>
           </b-list-group>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-
+        <div class="contenido col-lg-4 col-md-4 col-sm-12">
+          <content-placeholders>
+            <content-placeholders-img />
+          </content-placeholders>
+        </div>
+        <div class="contenido col-lg-4 col-md-4 col-sm-12">
+          <content-placeholders>
+            <content-placeholders-img />
+          </content-placeholders>
         </div>
       </div>
     </div>
+        <div class="espaciador"></div>
   </div>
 
 </template>
@@ -60,5 +68,14 @@ export default {
 .list-group-item{
   padding-top: 2px;
   padding-bottom: 2px;
+}
+
+@media only screen and (max-width: 736px) {
+  .contenido {
+    margin-top: 10px
+  }
+  .espaciador{
+    margin-top: 60px;
+  }
 }
 </style>
