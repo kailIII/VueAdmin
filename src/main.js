@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
 import App from './App'
 import BootstrapVue from 'bootstrap-vue'
 import VueProgressBar from 'vue-progressbar'
@@ -12,11 +13,13 @@ import 'vue-awesome/icons'
 import Content from './components/Content'
 import Content2 from './components/Content2'
 import Mensajes from './components/Mensajes'
+import Agenda from './components/Agenda'
 import Icon from 'vue-awesome/components/Icon'
 import VueContentPlaceholders from 'vue-content-placeholders'
 Vue.use(VueContentPlaceholders)
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
+Vue.use(VueResource)
 Vue.use(VueProgressBar, {
   color: 'rgb(143, 255, 199)',
   failedColor: 'red',
@@ -27,7 +30,8 @@ Vue.component('icon', Icon)
 const routes = [
   { path: '/', component: Content },
   { path: '/content2', component: Content2 },
-  { path: '/mensajes', component: Mensajes }
+  { path: '/mensajes', component: Mensajes },
+  { path: '/agenda', component: Agenda }
 ]
 const router = new VueRouter({
   routes

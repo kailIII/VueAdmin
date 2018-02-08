@@ -7,9 +7,11 @@
             <icon name="dashboard" flip="horizontal" scale="1.5"></icon>
           </b-btn>
         </router-link>
-        <b-btn v-b-tooltip.hover id="agenda"   size="sm" right class="m-1 hvr-wobble-vertical"  variant="primary">
-          <icon name="calendar" flip="horizontal" scale="1.5"></icon>
-        </b-btn>
+        <router-link to="/agenda">
+          <b-btn v-b-tooltip.hover id="agenda"   size="sm" right class="m-1 hvr-wobble-vertical"  variant="primary">
+            <icon name="calendar" flip="horizontal" scale="1.5"></icon>
+          </b-btn>          
+        </router-link>
         <router-link to="/mensajes">
           <b-btn v-b-tooltip.hover id="mensajes"   size="sm" right class="m-1 hvr-wobble-vertical"  variant="primary">
             <icon name="envelope" flip="horizontal" scale="1.5"></icon>

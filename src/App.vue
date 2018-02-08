@@ -8,6 +8,7 @@
     <router-view>
       <Content/>
       <Content2/>
+      <Agenda/>
       <Mensajes/>
     </router-view>
     <Menu2/>
@@ -19,6 +20,7 @@ import Navbar from './components/Navbar'
 import Menu2 from './components/Menu2'
 import Content from './components/Content'
 import Content2 from './components/Content2'
+import Agenda from './components/Agenda'
 import Mensajes from './components/Mensajes'
 export default {
   name: 'app',
@@ -27,6 +29,7 @@ export default {
     Menu2,
     Content,
     Content2,
+    Agenda,
     Mensajes
 
   },
