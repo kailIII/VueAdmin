@@ -16,6 +16,9 @@ import Mensajes from './components/Mensajes'
 import Agenda from './components/Agenda'
 import Icon from 'vue-awesome/components/Icon'
 import VueContentPlaceholders from 'vue-content-placeholders'
+import VueToastr from '@deveodk/vue-toastr'
+import '@deveodk/vue-toastr/dist/@deveodk/vue-toastr.css'
+Vue.use(VueToastr)
 Vue.use(VueContentPlaceholders)
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)

@@ -2,6 +2,11 @@
   <div>
     <div class="col-12">
       <h3>Agenda</h3>
+      <center>
+        <div v-if="envioCorrectamente" class="col-4 envioCorrectamente">
+          <b-alert show variant="success">Datos insertados correctamente</b-alert>
+        </div>
+      </center>
     </div>
   <hr>
   <div class="container-fluid">
@@ -19,9 +24,6 @@
           </b-form-group>
           <b-button variant="primary" @click.prevent="insertDatos">Guardar</b-button>
         </b-form>
-        <div v-if="envioCorrectamente">
-          <h3>Los datos json se han enviado correctamente</h3>
-        </div>
       </div>
       <div class="col-4">
         <label class="mr-sm-2">Preview de Insert VueRosource</label>
@@ -84,7 +86,13 @@ export default {
       })
       .then(function (respuesta) {
         console.log(respuesta)
-        this.envioCorrectamente = true
+        this.$toastr('add',
+          { title: 'Operacion realizada',
+          msg: 'Datos insertados correctamente' + this.Usuario.name,
+          clickClose: false,
+          timeout: 3000,
+          position: 'toast-top-center',
+          type: 'success' })
       })
     },
     obtenerAPI () {
@@ -98,4 +106,7 @@ export default {
 </script>
 
 <style lang="css">
+.envioCorrectamente {
+  transition: opacity .5s;
+}
 </style>
