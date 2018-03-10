@@ -26,7 +26,7 @@ export default {
   name: 'Navbar',
   data () {
     return {
-      empresa: 'IPSL',
+      empresa: 'JournalERP',
       usuario: 'Saul Espinoza',
       notificaciones: '15'
     }

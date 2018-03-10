@@ -11,7 +11,7 @@
   <hr>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-4">
+      <div class="col-md-4 col-sm-12 ">
         <b-form>
           <label class="mr-sm-2" for="inlineFormCustomSelectPref">Input con mongoDB</label>
           <b-form-group>
@@ -25,12 +25,12 @@
           <b-button variant="primary" @click.prevent="insertDatos">Guardar</b-button>
         </b-form>
       </div>
-      <div class="col-4">
+      <div class="col-md-4 col-sm-12">
         <label class="mr-sm-2">Preview de Insert VueRosource</label>
         <p>Nombre: {{ Usuario.name}}</p>
         <p>Apellido: {{ Usuario.lastName}}</p>
       </div>
-      <div class="col-4">
+      <div class="col-md-4 col-sm-12">
         <b-table striped small hover bordered :fields="fields" :items="personas">
           <template slot="first_name" slot-scope="data">
             {{data.item.name.first}}
@@ -86,13 +86,14 @@ export default {
       })
       .then(function (respuesta) {
         console.log(respuesta)
-        this.$toastr('add',
-          { title: 'Operacion realizada',
-          msg: 'Datos insertados correctamente' + this.Usuario.name,
+        this.$toastr('add', {
+          title: 'Operacion realizada',
+          msg: 'Datos insertados correctamente' + ' ' + this.Usuario.name,
           clickClose: false,
           timeout: 3000,
           position: 'toast-top-center',
-          type: 'success' })
+          type: 'success'
+        })
       })
     },
     obtenerAPI () {
