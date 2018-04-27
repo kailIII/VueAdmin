@@ -9,20 +9,16 @@
           <b-dropdown-divider></b-dropdown-divider>
           <b-tab title="CHAT"  head-html='' active>
               <b-tabs pills card vertical nav-wrapper-class="w-50">
-                <b-tab title="Saul Espinoza">
-                  Tab Contents 1
-                </b-tab>
-                <b-tab title="Raul Martinez"  v-if="active">
-                  Tab Contents 2
-                </b-tab>
-                <b-tab title="Oscar Santana">
-                  Tab Contents 3
-                </b-tab>
+                <div v-for="(chat, chatIndex) in chats" :key="chatIndex">
+                  <b-tab  :title="chat.name">
+                    {{ chat.contenido }}
+                  </b-tab>
+                </div>
               </b-tabs>
           </b-tab>
           <b-tab title="CONTACTOS"  head-html='' >
             <div class="row">
-              <div class="col-sm-4">
+              <div class="col-md-4 col-sm-12">
                 <b-list-group>
                   <b-list-group-item v-for="(contacto, contactoIndex) in contactos" :key="contactoIndex">
                     {{ contactoIndex }} {{ contacto.name.first}}
@@ -30,8 +26,15 @@
                   </b-list-group-item>
                 </b-list-group>
               </div>
-              <div class="col-sm-8">
-                <pre>{{ $data.contactos }}</pre>
+              <div class="col-sm-12 col-md-8">
+                <div class="row">
+                  <div class="card w-25 p-3" v-for="(contacto, contactoIndex) in contactos" :key="contactoIndex">
+                    <img class="card-img-top" :src="contacto.picture.thumbnail" alt="Card image cap">
+                    <div class="card-body">
+                      <p class="card-text">{{ contacto.name.first}}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </b-tab>
@@ -50,7 +53,13 @@ export default {
   data () {
     return {
       active: true,
-      contactos: []
+      contactos: [],
+      chats: [
+        { 'name': 'Saul Espinoza', 'contenido': 'Hola 1' },
+        { 'name': 'Oscar Santana', 'contenido': 'Hola 2' },
+        { 'name': 'Silvia Saucedo', 'contenido': 'Hola 3' },
+        { 'name': 'Manuel Martinez', 'contenido': 'Hola 4' }
+      ]
     }
   },
   created: function () {
@@ -78,5 +87,10 @@ export default {
 }
 .espaciador{
   margin-top: 60px;
+}
+
+/* Contact styles */
+.w-25 {
+    width: 140px !important;
 }
 </style>
