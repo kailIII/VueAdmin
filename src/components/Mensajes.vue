@@ -10,8 +10,8 @@
           <b-tab title="CHAT"  head-html='' active>
               <b-tabs pills card vertical nav-wrapper-class="w-50">
                 <div v-for="(chat, chatIndex) in chats" :key="chatIndex">
-                  <b-tab  :title="chat.name">
-                    {{ chat.contenido }}
+                  <b-tab  :title="chat.name.first">
+                    {{ chat.location.street }}
                   </b-tab>
                 </div>
               </b-tabs>
@@ -54,21 +54,22 @@ export default {
     return {
       active: true,
       contactos: [],
-      chats: [
-        { 'name': 'Saul Espinoza', 'contenido': 'Hola 1' },
-        { 'name': 'Oscar Santana', 'contenido': 'Hola 2' },
-        { 'name': 'Silvia Saucedo', 'contenido': 'Hola 3' },
-        { 'name': 'Manuel Martinez', 'contenido': 'Hola 4' }
-      ]
+      chats: []
     }
   },
   created: function () {
     this.obtenerContactosAPI()
+    this.mostrarContactosChat()
   },
   methods: {
     obtenerContactosAPI: function () {
       this.$http.get('https://randomuser.me/api/?results=5').then(function (mostrarContactos) {
         this.contactos = mostrarContactos.body.results
+      })
+    },
+    mostrarContactosChat: function () {
+      this.$http.get('https://randomuser.me/api/?results=5').then(function (chatContactos) {
+        this.chats = chatContactos.body.results
       })
     }
   }
