@@ -6,6 +6,7 @@ import VueResource from 'vue-resource'
 import App from './App'
 import BootstrapVue from 'bootstrap-vue'
 import VueProgressBar from 'vue-progressbar'
+import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'hover.css/css/hover.css'
 import 'vue-awesome/icons'
@@ -22,6 +23,7 @@ Vue.use(VueContentPlaceholders)
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.use(VueResource)
+Vue.use(axios)
 Vue.use(VueProgressBar, {
   color: 'rgb(143, 255, 199)',
   failedColor: 'red',
